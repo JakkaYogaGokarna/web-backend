@@ -3,7 +3,10 @@
 const mongoose = require('mongoose');
 
 const appointmentSchema = new mongoose.Schema({
-  name: String,
+  name: {
+    type: String,
+    required: true
+  },
   email: String,
   phone: String,
   date: String,
@@ -13,3 +16,4 @@ const appointmentSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Appointment', appointmentSchema);
+    
